@@ -14,13 +14,15 @@ var mergeTwoLists = function(list1, list2) {
     const mergeListByDesc = (l1, l2) => {
         let result;
         if (!l1) return l2;
-        if (!l2) return l1;
-        if(l1.val <= l2.val) {
+        else if (!l2) return l1;
+        else {
+            if(l1.val <= l2.val) {
             result = l1;
             result.next = mergeListByDesc(l1.next, l2)
         } else {
             result = l2;
             result.next = mergeListByDesc(l1, l2.next);
+        }
         }
         return result;
     }
