@@ -11,21 +11,18 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(list1, list2) {
-    const mergeListByDesc = (l1, l2) => {
-        let result;
-        if (!l1) return l2;
-        else if (!l2) return l1;
-        else {
-            if(l1.val <= l2.val) {
-            result = l1;
-            result.next = mergeListByDesc(l1.next, l2)
+    let result;
+    if (!list1) return list2;
+    else if (!list2) return list1;
+    else {
+        if(list1.val <= list2.val) {
+            result = list1;
+            result.next = mergeTwoLists(list1.next, list2)
         } else {
-            result = l2;
-            result.next = mergeListByDesc(l1, l2.next);
+            result = list2;
+            result.next = mergeTwoLists(list1, list2.next);
         }
-        }
-        return result;
     }
-    
-    return mergeListByDesc(list1, list2);
+    return result;
 };
+    
