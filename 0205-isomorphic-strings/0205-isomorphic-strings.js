@@ -27,9 +27,7 @@ var isIsomorphic = function(s, t) {
     
     // console.log(sMapArray[1].toString() !== tMapArray[1].toString())
   for(let i = 0; i < sMapArray.length; i++) {
-      if(sMapArray[i].toString() !== tMapArray[i].toString()) {
-          return false;
-      }
+      if(sMapArray[i].toString() !== tMapArray[i].toString()) return false;
   }
   return true;
 };
