@@ -13,9 +13,8 @@
 var preorder = function(root) {
     const result = [];
     
-    if(!root) return result;
-    
     const preOrder = (root) => {
+        if(!root) return;
         result.push(root.val);
         if(root.children) {
             for(let i = 0; i < root.children.length; i++) {
